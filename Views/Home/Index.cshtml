@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <h2>Request Properties</h2>
+    <ul>
+        <li>Method: @Context.Request.Method</li>
+        <li>Protocol: @Context.Request.Protocol</li>
+        <li>Path: @Context.Request.Path</li>
+        <li>QueryString: @Context.Request.QueryString</li>
+        <li>Host: @Context.Request.Host</li>
+        <li>Headers:</li>
+        <ul>
+            @foreach (var header in Context.Request.Headers)
+            {
+                <li>@header.Key: @header.Value</li>
+            }
+        </ul>
+    </ul>
+</div>
